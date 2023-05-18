@@ -1,0 +1,14 @@
+body {
+  /* background-color: rgba(219, 242, 255, 0.159); */
+
+  background-color: rgba(69, 94, 108, 0.159);
+}
+
+.completed-task {
+  text-decoration: line-through;
+}
+
+.create-task {
+  width: 420px;
+}
+
