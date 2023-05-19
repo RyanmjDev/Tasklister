@@ -5,7 +5,7 @@ import { animated, useTransition, config as springConfig  } from '@react-spring/
 
 
 import App from './App';
-import Login from './Pages/login.jsx';
+import Login from './Pages/Login.jsx';
 import Register from './Pages/Register';
 import './index.css';
 
