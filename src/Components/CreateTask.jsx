@@ -14,6 +14,8 @@ const CreateTask = ({addTask}) => {
     }
 
     const handleSubmit = async () => {
+      if(newTask)
+      {
         try {
           api.post('/api/tasks/', { description: newTask })
           .then((res) => {
@@ -25,6 +27,7 @@ const CreateTask = ({addTask}) => {
         {
           console.log(error);
         }
+      }
     }
 
 

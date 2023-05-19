@@ -24,10 +24,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await api.post('/api/users/register', { email, password } );
-      console.log(response)
-
       const token = response.data.token;
-      console.log(token);
       localStorage.setItem('token', token);
       Cookies.set("token", token, { expires: 1 });
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
