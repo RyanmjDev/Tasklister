@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import CreateTask from './CreateTask'
-import Task from './task'
+import Task from './Task'
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import api from '../utils/api';

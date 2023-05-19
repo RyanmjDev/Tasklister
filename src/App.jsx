@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Tasklist from './Components/tasklist';
-import Login from './Pages/login';
-import Register from './Pages/Register';
+import Tasklist from './Components/Tasklist';
 
 
 function App() {
