@@ -41,8 +41,11 @@ const Task = ({ taskId, index, text, completed, deleteTask }) => {
     }
   };
 
+
+
+
   return (
-    <div className="flex">
+    <div className="flex justify-between max-w-lg mx-auto">
       <div
         className={`flex w-full py-2 align-middle 
     shadow-md mb-3 border-2 border-gray-200
