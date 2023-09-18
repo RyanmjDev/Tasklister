@@ -1,15 +1,12 @@
-import { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Tasklist from './Components/Tasklist';
 
-
-function App() {
+const App: React.FC = () => {
   return (
- <>
-  <Tasklist/>
-
-</>
-
+    <>
+      <Tasklist />
+    </>
   );
 }
 
