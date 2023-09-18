@@ -2,35 +2,40 @@ import React, { useState, useEffect } from "react";
 import TaskUpdate from "./TaskUpdate";
 import api from '../utils/api';
 
-const Task = ({ taskId, index, text, completed, deleteTask }) => {
-  const [isComplete, setIsComplete] = useState(completed);
-  const [isEditing, setIsEditing] = useState(false);
-  const [taskText, setTaskText] = useState(text);
+interface TaskProps {
+  taskId: string;
+  index: number;
+  text: string;
+  completed: boolean;
+  deleteTask: (index: number, taskId: string) => void;
+}
+
+const Task: React.FC<TaskProps> = ({ taskId, index, text, completed, deleteTask }) => {
+  const [isComplete, setIsComplete] = useState<boolean>(completed);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [taskText, setTaskText] = useState<string>(text);
 
   useEffect(() => {
-    console.log(completed)
     setIsComplete(completed);
   }, [completed]);
-
 
   const toggleEdit = () => {
     setIsEditing(!isEditing);
   };
 
-  const handleEditTextChange = (event) => {
+  const handleEditTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTaskText(event.target.value);
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter" || event.keyCode === 13) {
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
       toggleEdit();
     }
   };
 
-  const handleToggleCompletion = async (event) => {
+  const handleToggleCompletion = async (event: React.MouseEvent) => {
     event.stopPropagation();
-    if(!isEditing)
-    {
+    if (!isEditing) {
       try {
         const updatedCompleted = !isComplete;
         await api.put(`/api/tasks/${taskId}`, { completed: updatedCompleted });
@@ -39,10 +44,7 @@ const Task = ({ taskId, index, text, completed, deleteTask }) => {
         console.log(error);
       }
     }
-  };
-
-
-
+  }
 
   return (
     <div className="flex justify-between max-w-lg mx-auto">
