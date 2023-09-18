@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     const handleRegister = () => {
         navigate('/register');
     };
-
+ 
     return (
         <div className="flex md:justify-center md:items-center md:h-screen md:w-screen bg-gray-100">
             <div className="flex flex-col justify-center bg-white shadow-lg rounded-lg p-8 w-full md:max-w-xl md:w-5/6 md:rounded-md">
