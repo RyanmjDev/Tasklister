@@ -17,7 +17,7 @@ const AnimatedRoutes: React.FC = () => {
         config: { ...springConfig.stiff, duration: 500 },
     });
 
-    return transitions((props, item) => (
+    return transitions((props: any, item) => (
         <animated.div style={props}>
             <Routes key={item.pathname}>
                 <Route path="/login" element={<Login />} />
@@ -28,10 +28,12 @@ const AnimatedRoutes: React.FC = () => {
     ));
 };
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.render(
     <React.StrictMode>
         <Router>
             <AnimatedRoutes />
         </Router>
     </React.StrictMode>,
+    document.getElementById('root')
 );
+
